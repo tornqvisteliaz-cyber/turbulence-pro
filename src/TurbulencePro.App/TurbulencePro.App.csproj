@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>TurbulencePro.App</RootNamespace>
+    <ApplicationTitle>Turbulence Pro</ApplicationTitle>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TurbulencePro.Core\TurbulencePro.Core.csproj" />
+    <ProjectReference Include="..\TurbulencePro.Audio\TurbulencePro.Audio.csproj" />
+    <ProjectReference Include="..\TurbulencePro.SimConnect\TurbulencePro.SimConnect.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NAudio" Version="2.2.1" />
+  </ItemGroup>
+</Project>

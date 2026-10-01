@@ -1,0 +1,15 @@
+{
+  "id": "pmdg-737",
+  "aircraft": "PMDG 737",
+  "matchTitleContains": "737",
+  "referenceMassKg": 65000,
+  "verticalResponse": 1.05,
+  "lateralResponse": 0.85,
+  "longitudinalResponse": 0.72,
+  "pitchResponse": 0.82,
+  "rollResponse": 0.8,
+  "yawResponse": 0.52,
+  "structuralVibration": 1.05,
+  "cameraSensitivity": 0.2,
+  "soundSensitivity": 1.0
+}

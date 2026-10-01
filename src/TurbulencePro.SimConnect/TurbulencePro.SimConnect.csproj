@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>TurbulencePro.SimConnect</RootNamespace>
+    <DefineConstants Condition="'$(SimConnectManagedDll)' != ''">$(DefineConstants);SIMCONNECT</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TurbulencePro.Core\TurbulencePro.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(SimConnectManagedDll)' != ''">
+    <Reference Include="Microsoft.FlightSimulator.SimConnect">
+      <HintPath>$(SimConnectManagedDll)</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

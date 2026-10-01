@@ -1,0 +1,15 @@
+{
+  "id": "generic-ga",
+  "aircraft": "Generic GA",
+  "matchTitleContains": "Cessna",
+  "referenceMassKg": 1100,
+  "verticalResponse": 1.6,
+  "lateralResponse": 1.4,
+  "longitudinalResponse": 1.2,
+  "pitchResponse": 1.5,
+  "rollResponse": 1.6,
+  "yawResponse": 1.1,
+  "structuralVibration": 1.3,
+  "cameraSensitivity": 0.35,
+  "soundSensitivity": 1.1
+}

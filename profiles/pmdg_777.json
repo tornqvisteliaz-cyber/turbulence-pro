@@ -1,0 +1,15 @@
+{
+  "id": "pmdg-777",
+  "aircraft": "PMDG 777",
+  "matchTitleContains": "777",
+  "referenceMassKg": 220000,
+  "verticalResponse": 0.62,
+  "lateralResponse": 0.5,
+  "longitudinalResponse": 0.48,
+  "pitchResponse": 0.5,
+  "rollResponse": 0.42,
+  "yawResponse": 0.35,
+  "structuralVibration": 0.7,
+  "cameraSensitivity": 0.15,
+  "soundSensitivity": 0.85
+}

@@ -1,0 +1,15 @@
+{
+  "id": "asobo-787",
+  "aircraft": "Asobo 787",
+  "matchTitleContains": "787",
+  "referenceMassKg": 180000,
+  "verticalResponse": 0.7,
+  "lateralResponse": 0.55,
+  "longitudinalResponse": 0.5,
+  "pitchResponse": 0.55,
+  "rollResponse": 0.48,
+  "yawResponse": 0.38,
+  "structuralVibration": 0.75,
+  "cameraSensitivity": 0.15,
+  "soundSensitivity": 0.9
+}

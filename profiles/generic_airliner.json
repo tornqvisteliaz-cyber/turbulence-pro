@@ -1,0 +1,15 @@
+{
+  "id": "generic-airliner",
+  "aircraft": "Generic Airliner",
+  "matchTitleContains": "",
+  "referenceMassKg": 70000,
+  "verticalResponse": 1.0,
+  "lateralResponse": 0.8,
+  "longitudinalResponse": 0.7,
+  "pitchResponse": 0.8,
+  "rollResponse": 0.75,
+  "yawResponse": 0.5,
+  "structuralVibration": 1.0,
+  "cameraSensitivity": 0.2,
+  "soundSensitivity": 1.0
+}

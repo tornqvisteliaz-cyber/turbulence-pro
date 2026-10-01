@@ -1,0 +1,77 @@
+<Window x:Class="TurbulencePro.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Turbulence Pro" Height="820" Width="1180"
+        Background="#121820" Foreground="#E7EEF6">
+  <DockPanel Margin="16">
+    <TextBlock DockPanel.Dock="Top" FontSize="22" FontWeight="SemiBold" Text="Turbulence Pro"/>
+    <TextBlock DockPanel.Dock="Top" Margin="0,4,0,12" Foreground="#93A4B8"
+               Text="Measured values come from simulator changes. Simulated values are procedural and are not MSFS turbulence."/>
+    <TabControl>
+      <TabItem Header="Flight">
+        <Grid Margin="8">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+          <StackPanel>
+            <TextBlock Text="{Binding ConnectionStatus}" FontWeight="Bold"/>
+            <TextBlock Margin="0,8,0,0" Text="{Binding Aircraft}"/>
+            <TextBlock Text="{Binding Phase, StringFormat=Phase {0}}"/>
+            <TextBlock Text="{Binding AltitudeText, StringFormat=Altitude {0}}"/>
+            <TextBlock Text="{Binding IasText, StringFormat=IAS {0}}"/>
+            <TextBlock Text="{Binding WindText, StringFormat=Wind {0}}"/>
+            <TextBlock Margin="0,16,0,0" Text="MEASURED TURBULENCE"/>
+            <TextBlock FontSize="28" Text="{Binding MeasuredText}"/>
+            <TextBlock Margin="0,8,0,0" Text="SIMULATED TURBULENCE"/>
+            <TextBlock FontSize="28" Text="{Binding SimulatedText}"/>
+            <TextBlock Margin="0,8,0,0" Text="FINAL EFFECT"/>
+            <TextBlock FontSize="28" Text="{Binding FinalText}"/>
+            <TextBlock Margin="0,8,0,0" Text="{Binding ClassText, StringFormat=CLASS {0}}"/>
+            <TextBlock Text="{Binding ConfidenceText, StringFormat=Confidence {0}}"/>
+            <TextBlock Margin="0,8,0,0" TextWrapping="Wrap" Foreground="#93A4B8" Text="{Binding Reasons}"/>
+          </StackPanel>
+          <Canvas x:Name="Graph" Grid.Column="1" Background="#1B2430" Margin="12,0,0,0"/>
+        </Grid>
+      </TabItem>
+      <TabItem Header="Test">
+        <StackPanel Margin="8">
+          <TextBlock Text="Test mode uses the same SimulationLoop as live SimConnect data."/>
+          <UniformGrid Columns="2" Margin="0,8,0,0">
+            <StackPanel><TextBlock Text="Altitude ft"/><Slider Minimum="0" Maximum="45000" Value="{Binding Altitude}"/></StackPanel>
+            <StackPanel><TextBlock Text="AGL ft"/><Slider Minimum="0" Maximum="45000" Value="{Binding Agl}"/></StackPanel>
+            <StackPanel><TextBlock Text="IAS kt"/><Slider Minimum="0" Maximum="500" Value="{Binding Ias}"/></StackPanel>
+            <StackPanel><TextBlock Text="Vertical speed fpm"/><Slider Minimum="-4000" Maximum="4000" Value="{Binding VerticalSpeedFpm}"/></StackPanel>
+            <StackPanel><TextBlock Text="Wind kt"/><Slider Minimum="0" Maximum="120" Value="{Binding WindSpeed}"/></StackPanel>
+            <StackPanel><TextBlock Text="Wind direction"/><Slider Minimum="0" Maximum="360" Value="{Binding WindDirection}"/></StackPanel>
+            <StackPanel><TextBlock Text="Wind variation"/><Slider Minimum="0" Maximum="20" Value="{Binding WindVariation}"/></StackPanel>
+            <StackPanel><TextBlock Text="Weight lb"/><Slider Minimum="1000" Maximum="800000" Value="{Binding WeightPounds}"/></StackPanel>
+            <StackPanel><TextBlock Text="Simulated drive"/><Slider Minimum="0" Maximum="1" Value="{Binding Drive}"/></StackPanel>
+          </UniformGrid>
+          <CheckBox Content="On ground" IsChecked="{Binding OnGround}"/>
+          <CheckBox Content="In cloud" IsChecked="{Binding InCloud}"/>
+          <CheckBox Content="Precipitation" IsChecked="{Binding Precipitation}"/>
+          <CheckBox Content="Record" IsChecked="{Binding Recording}"/>
+          <WrapPanel Margin="0,8,0,0">
+            <Button Content="Light" Margin="4" Click="ForceLight"/>
+            <Button Content="Moderate" Margin="4" Click="ForceModerate"/>
+            <Button Content="Severe" Margin="4" Click="ForceSevere"/>
+            <Button Content="CAT" Margin="4" Click="ForceCat"/>
+            <Button Content="Mechanical" Margin="4" Click="ForceMechanical"/>
+            <Button Content="Mountain Wave" Margin="4" Click="ForceWave"/>
+            <Button Content="Convective" Margin="4" Click="ForceConvective"/>
+            <Button Content="Thermal" Margin="4" Click="ForceThermal"/>
+            <Button Content="Ground" Margin="4" Click="ForceGround"/>
+            <Button Content="Clear override" Margin="4" Click="ClearForce"/>
+          </WrapPanel>
+        </StackPanel>
+      </TabItem>
+      <TabItem Header="Debug">
+        <DockPanel Margin="8">
+          <TextBlock DockPanel.Dock="Top" Text="{Binding AudioText}" Margin="0,0,0,8"/>
+          <TextBlock Text="{Binding DebugText}" FontFamily="Consolas"/>
+        </DockPanel>
+      </TabItem>
+    </TabControl>
+  </DockPanel>
+</Window>
